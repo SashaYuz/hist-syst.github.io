@@ -1,0 +1,218 @@
+<html> <head>
+<script>
+function ShowImg(n)
+	{
+	ShowMay(n)
+	ShowVav(n)
+	ShowRus(n)
+	
+	
+}
+	function ShowMay(t)
+	{
+	var p=t % 20
+	var r=(t - p) / 20 % 20
+	var s=(t - r) / 400
+	s=s - (s%1)
+	s=s%20
+	var u=(t - s) / 8000
+	u=u - (u%1)
+	var q1="./pic/may/m"+p.toString()+".png"
+	if (p!=0 | r!=0 | s!=0 | u!=0)
+		{
+		var elem2 = document.getElementById("pic34")
+		elem2.src = q1
+		}else{
+		var elem2 = document.getElementById("pic34")
+			 elem2.src = "./pic/vav/v10_1.png"
+		}
+	var q2="./pic/may/m"+r.toString()+".png"
+	if (r!=0 | s!=0 | u!=0)
+		{
+		var elem1 = document.getElementById("pic33")
+			 elem1.src = q2
+		}else{
+		var elem2 = document.getElementById("pic33")
+			 elem2.src = "./pic/vav/v10_1.png"
+		}
+	var q3="./pic/may/m"+s.toString()+".png"
+	if (s!=0 | u!=0)
+		{
+		var elem1 = document.getElementById("pic32")
+			  elem1.src = q3
+		}else{
+		var elem2 = document.getElementById("pic32")
+			 elem2.src = "./pic/vav/v10_1.png"
+		}
+	var q4="./pic/may/m"+u.toString()+".png"
+	if (u!=0)
+		{
+		var elem1 = document.getElementById("pic31")
+			elem1.src = q4
+		}else{
+		var elem2 = document.getElementById("pic31")
+			 elem2.src = "./pic/vav/v10_1.png"
+		}
+	}
+	function ShowVav(t)
+	{
+	var x=t % 60
+	var y=(t - x) / 60 % 60
+	var z=(t - y) / 3600
+	z=z - (z%1)
+	var s1="./pic/vav/v"+x.toString()+".png"
+	if (x!=0 | y!=0 | z!=0)
+		{
+		var elem2 = document.getElementById("pic14")
+		elem2.src = s1
+		}else{	
+		var elem2 = document.getElementById("pic14")
+			 elem2.src = "./pic/vav/v10_1.png"
+		}
+	var s2="./pic/vav/v"+y.toString()+".png"
+	if (y!=0 | z!=0)
+		{
+		var elem1 = document.getElementById("pic13")
+			 elem1.src = s2
+		}else{
+		var elem2 = document.getElementById("pic13")
+			 elem2.src = "./pic/vav/v10_1.png"
+		}
+	var s3="./pic/vav/v"+z.toString()+".png"
+	if (z!=0)
+		{
+		var elem1 = document.getElementById("pic12")
+			  elem1.src = s3
+		}else{
+		var elem2 = document.getElementById("pic12")
+			 elem2.src = "./pic/vav/v10_1.png"
+		}
+	}
+
+	function ShowRus(t)
+	{ 
+	var a= t % 10
+	var b= (t - a) % 100
+	var c= (t - b - a) % 1000
+	var d= (t - c - b - a) % 10000
+	if (t>10 & t<20)
+		{
+		var c1="./pic/rus/r"+a.toString()+".png"
+		if (a!=0)
+			{
+			var elem2 = document.getElementById("pic23")
+			elem2.src = c1
+			}else{	
+			var elem2 = document.getElementById("pic23")
+			 elem2.src = "./pic/vav/v10_1.png"
+			}
+		var c2="./pic/rus/r"+b.toString()+".png"
+		if (b!=0)
+			{
+			var elem1 = document.getElementById("pic24")
+			 elem1.src = c2
+			}else{
+			var elem2 = document.getElementById("pic24")
+			 elem2.src = "./pic/vav/v10_1.png"
+			}
+		}else{
+		var c1="./pic/rus/r"+a.toString()+".png"
+		if (a!=0)
+			{
+			var elem2 = document.getElementById("pic24")
+			elem2.src = c1
+			}else{	
+			var elem2 = document.getElementById("pic24")
+			 elem2.src = "./pic/vav/v10_1.png"
+			}
+		var c2="./pic/rus/r"+b.toString()+".png"
+		if (b!=0)
+			{
+			var elem1 = document.getElementById("pic23")
+			 elem1.src = c2
+			}else{
+			var elem2 = document.getElementById("pic23")
+			 elem2.src = "./pic/vav/v10_1.png"
+			}
+		var c3="./pic/rus/r"+c.toString()+".png"
+		if (c!=0)
+			{
+			var elem1 = document.getElementById("pic22")
+			  elem1.src = c3
+			}else{
+			var elem2 = document.getElementById("pic22")
+			 elem2.src = "./pic/vav/v10_1.png"
+			}
+		var c4="./pic/rus/r"+d.toString()+".png"
+		if (d!=0)
+			{
+			var elem1 = document.getElementById("pic21")
+			  elem1.src = c4
+			}else{
+			var elem2 = document.getElementById("pic21")
+			 elem2.src = "./pic/vav/v10_1.png"
+			}
+		}
+	}
+
+	
+</script>
+<style type="text/css">
+    .one{   
+    		width: 300px; /* Ширина таблицы */
+    		border: 2px solid black; /* Рамка вокруг таблицы */
+	}
+    .two{
+    	width: 70px; /* Ширина таблицы */
+    	border: 2px solid black; /* Рамка вокруг таблицы */
+	}
+</style>
+</head>
+<body background="table_2.jpg">
+<FORM>
+	<INPUT type=text name=numb size=40  maxlenght=40>
+	<input type="button" value="Convert" onclick="ShowImg (numb.value)">
+</FORM>
+<br>
+<br>
+</br>
+<table class="one" bgcolor="#E7C48A"  height="70" cellspacing="0">
+<tr>
+<td><img id="pic11" src = "./pic/vav/v10_1.png"></img> </td>
+<td><img id="pic12" src = "./pic/vav/v10_1.png"></img> </td>
+<td><img id="pic13" src = "./pic/vav/v10_1.png"></img> </td>
+<td><img id="pic14" src = "./pic/vav/v10_1.png"></img> </td>
+</tr>
+</table> 
+<br>
+</br>
+<table style="margin-left:120px;" class="two" bgcolor="#E7C48A" height="200" cellspacing="0">
+<tr>
+<td><img id="pic31" src = "./pic/vav/v10_1.png"></img> </td>
+</tr>
+<tr>
+<td><img id="pic32" src = "./pic/vav/v10_1.png"></img> </td>
+</tr>
+<tr>
+<td><img id="pic33" src = "./pic/vav/v10_1.png"></img> </td>
+</tr>
+<tr>
+<td><img id="pic34" src = "./pic/vav/v10_1.png"></img> </td>
+</tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+</br>
+<table class="one" bgcolor="#E7C48A"  height="70" cellspacing="0">
+<tr>
+<td><img id="pic21" src = "./pic/vav/v10_1.png"></img> </td>
+<td><img id="pic22" src = "./pic/vav/v10_1.png"></img> </td>
+<td><img id="pic23" src = "./pic/vav/v10_1.png"></img> </td>
+<td><img id="pic24" src = "./pic/vav/v10_1.png"></img> </td>
+</tr>
+</table>
+</body>
+</html>
